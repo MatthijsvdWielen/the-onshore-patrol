@@ -1,0 +1,20 @@
+# ==========================================
+# Site Settings (Global Variables)
+# ==========================================
+title: The Onshore Patrol
+description: Reviews from the North Sea trenches. Real boards for real surfers.
+url: "https://yourusername.github.io" # Replace with your actual GitHub Pages URL
+baseurl: ""                           # Leave empty if this is your primary repository
+
+# ==========================================
+# Build & Parsing Configurations
+# ==========================================
+# This keeps your URLs incredibly clean by stripping out the ugly ".html" extensions!
+permalink: pretty
+
+# Tells Jekyll to completely ignore files you don't want published online
+exclude:
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock

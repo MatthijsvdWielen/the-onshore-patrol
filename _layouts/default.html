@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Onshore Patrol | {{ page.title }}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="{{ page.bg_color | default: 'bg-slate-900' }} text-slate-100 font-sans transition-colors duration-200">
+
+    <!-- === CENTRALIZED HEADER === -->
+    <!-- We dynamically assign the border color based on the page theme -->
+    <header class="py-10 px-6 text-center border-b {{ page.border_color | default: 'border-slate-800' }}">
+        <h1 class="text-4xl font-black tracking-tighter uppercase">The Onshore Patrol</h1>
+        
+        <!-- Navigation automatically reads the layout's active color or falls back to blue -->
+        <nav class="mt-8 flex justify-center gap-6 font-bold uppercase text-sm tracking-widest">
+            <a href="index.html" class="{% if page.url == '/' or page.url == '/index.html' %}text-blue-500 border-b-2 border-blue-500 pb-1{% else %}hover:{{ page.hover_color | default: 'text-blue-400' }} transition{% endif %}">Home</a>
+            <a href="reviews.html" class="{% if page.url contains '/reviews' or page.url == '/reviews.html' %}text-blue-500 border-b-2 border-blue-500 pb-1{% else %}hover:{{ page.hover_color | default: 'text-blue-400' }} transition{% endif %}">Reviews</a>
+            <a href="improving.html" class="{% if page.url == '/improving.html' %}text-blue-500 border-b-2 border-blue-500 pb-1{% else %}hover:{{ page.hover_color | default: 'text-blue-400' }} transition{% endif %}">Improving</a>
+            <a href="quiver.html" class="{% if page.url == '/quiver.html' %}text-blue-500 border-b-2 border-blue-500 pb-1{% else %}hover:{{ page.hover_color | default: 'text-blue-400' }} transition{% endif %}">My Quiver</a>
+        </nav>
+    </header>
+
+    <!-- === DYNAMIC MAIN WRAPPER === -->
+    <main class="{{ page.max_width | default: 'max-w-4xl' }} mx-auto p-6 py-12">
+        {{ content }}
+    </main>
+
+    <!-- === CENTRALIZED FOOTER === -->
+    <footer class="py-10 text-center text-slate-600 text-xs uppercase tracking-widest">
+        &copy; 2026 The Onshore Patrol
+    </footer>
+
+</body>
+</html>
