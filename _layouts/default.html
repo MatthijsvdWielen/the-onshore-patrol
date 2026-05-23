@@ -15,10 +15,10 @@
         
         <!-- Navigation automatically reads the layout's active color or falls back to blue -->
         <nav class="mt-8 flex justify-center gap-6 font-bold uppercase text-sm tracking-widest">
-            <a href="index.html" class="{% if page.url == '/' or page.url == '/index.html' %}text-blue-500 border-b-2 border-blue-500 pb-1{% else %}hover:{{ page.hover_color | default: 'text-blue-400' }} transition{% endif %}">Home</a>
-            <a href="reviews.html" class="{% if page.url contains '/reviews' or page.url == '/reviews.html' %}text-blue-500 border-b-2 border-blue-500 pb-1{% else %}hover:{{ page.hover_color | default: 'text-blue-400' }} transition{% endif %}">Reviews</a>
-            <a href="improving.html" class="{% if page.url == '/improving.html' %}text-blue-500 border-b-2 border-blue-500 pb-1{% else %}hover:{{ page.hover_color | default: 'text-blue-400' }} transition{% endif %}">Improving</a>
-            <a href="quiver.html" class="{% if page.url == '/quiver.html' %}text-blue-500 border-b-2 border-blue-500 pb-1{% else %}hover:{{ page.hover_color | default: 'text-blue-400' }} transition{% endif %}">My Quiver</a>
+            <a href="index" class="{% if page.url == '/' or page.url == '/index' %}text-blue-500 border-b-2 border-blue-500 pb-1{% else %}hover:{{ page.hover_color | default: 'text-blue-400' }} transition{% endif %}">Home</a>
+            <a href="reviews" class="{% if page.url contains '/reviews' or page.url == '/reviews' %}text-blue-500 border-b-2 border-blue-500 pb-1{% else %}hover:{{ page.hover_color | default: 'text-blue-400' }} transition{% endif %}">Reviews</a>
+            <a href="improving" class="{% if page.url == '/improving' %}text-blue-500 border-b-2 border-blue-500 pb-1{% else %}hover:{{ page.hover_color | default: 'text-blue-400' }} transition{% endif %}">Improving</a>
+            <a href="quiver" class="{% if page.url == '/quiver' %}text-blue-500 border-b-2 border-blue-500 pb-1{% else %}hover:{{ page.hover_color | default: 'text-blue-400' }} transition{% endif %}">My Quiver</a>
         </nav>
     </header>
 
