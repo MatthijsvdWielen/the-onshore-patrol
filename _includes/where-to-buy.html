@@ -1,4 +1,5 @@
-<!-- Inside _includes/where-to-buy.html -->
+{% if page.link_hartbeach or page.link_boardshop or page.link_pukas or page.link_behindthepines or page.link_fins_hartbeach or page.link_fins_pukas or page.link_fins_boardshop or page.link_fins_behindthepines or page.link_acc_hartbeach or page.link_acc_behindthepines %}
+<!-- Where to Buy Component -->
 <div class="my-12 p-6 bg-slate-900/40 border border-purple-900/20 rounded-xl backdrop-blur-sm">
   <div class="mb-6">
     <h3 class="text-xl font-bold text-slate-100 tracking-tight flex items-center gap-2 uppercase">
@@ -16,34 +17,41 @@
         Surfboards
       </h4>
       <ul class="space-y-1.5">
+        {% if page.link_hartbeach %}
         <li>
-          <!-- If page.link_hartbeach exists, use it. Otherwise, default to '#' -->
-          <a href="{{ page.link_hartbeach | default: '#' }}" target="_blank" rel="noopener" class="group flex items-center justify-between p-2 rounded-lg hover:bg-purple-950/30 transition text-sm text-slate-300 hover:text-purple-400">
+          <a href="{{ page.link_hartbeach }}" target="_blank" rel="noopener" class="group flex items-center justify-between p-2 rounded-lg hover:bg-purple-950/30 transition text-sm text-slate-300 hover:text-purple-400">
             <span>Hart Beach</span>
             <span class="text-xs text-slate-500 group-hover:translate-x-0.5 transition-transform">→</span>
           </a>
         </li>
+        {% endif %}
+        
+        {% if page.link_boardshop %}
         <li>
-          <!-- Catches page.link_boardshop from Markdown header -->
-          <a href="{{ page.link_boardshop | default: '#' }}" target="_blank" rel="noopener" class="group flex items-center justify-between p-2 rounded-lg hover:bg-purple-950/30 transition text-sm text-slate-300 hover:text-purple-400">
+          <a href="{{ page.link_boardshop }}" target="_blank" rel="noopener" class="group flex items-center justify-between p-2 rounded-lg hover:bg-purple-950/30 transition text-sm text-slate-300 hover:text-purple-400">
             <span>Boardshop.co.uk</span>
             <span class="text-xs text-slate-500 group-hover:translate-x-0.5 transition-transform">→</span>
           </a>
         </li>
+        {% endif %}
+        
+        {% if page.link_pukas %}
         <li>
-          <!-- Catches page.link_pukas from Markdown header -->
-          <a href="{{ page.link_pukas | default: '#' }}" target="_blank" rel="noopener" class="group flex items-center justify-between p-2 rounded-lg hover:bg-purple-950/30 transition text-sm text-slate-300 hover:text-purple-400">
+          <a href="{{ page.link_pukas }}" target="_blank" rel="noopener" class="group flex items-center justify-between p-2 rounded-lg hover:bg-purple-950/30 transition text-sm text-slate-300 hover:text-purple-400">
             <span>Pukas Surf Shop</span>
             <span class="text-xs text-slate-500 group-hover:translate-x-0.5 transition-transform">→</span>
           </a>
         </li>
+        {% endif %}
+        
+        {% if page.link_behindthepines %}
         <li>
-          <!-- Catches page.link_behindthepines from Markdown header -->
-          <a href="{{ page.link_behindthepines | default: '#' }}" target="_blank" rel="noopener" class="group flex items-center justify-between p-2 rounded-lg hover:bg-purple-950/30 transition text-sm text-slate-300 hover:text-purple-400">
+          <a href="{{ page.link_behindthepines }}" target="_blank" rel="noopener" class="group flex items-center justify-between p-2 rounded-lg hover:bg-purple-950/30 transition text-sm text-slate-300 hover:text-purple-400">
             <span>Behind the Pines</span>
             <span class="text-xs text-slate-500 group-hover:translate-x-0.5 transition-transform">→</span>
           </a>
         </li>
+        {% endif %}
       </ul>
     </div>
 
@@ -53,31 +61,41 @@
         Fins
       </h4>
       <ul class="space-y-1.5">
+        {% if page.link_fins_hartbeach %}
         <li>
-          <a href="{{ page.link_fins_hartbeach | default: '#' }}" target="_blank" rel="noopener" class="group flex items-center justify-between p-2 rounded-lg hover:bg-purple-950/30 transition text-sm text-slate-300 hover:text-purple-400">
+          <a href="{{ page.link_fins_hartbeach }}" target="_blank" rel="noopener" class="group flex items-center justify-between p-2 rounded-lg hover:bg-purple-950/30 transition text-sm text-slate-300 hover:text-purple-400">
             <span>Hart Beach</span>
             <span class="text-xs text-slate-500 group-hover:translate-x-0.5 transition-transform">→</span>
           </a>
         </li>
-               <li>
-          <!-- Catches page.link_pukas from Markdown header -->
-          <a href="{{ page.link_fins_pukas | default: '#' }}" target="_blank" rel="noopener" class="group flex items-center justify-between p-2 rounded-lg hover:bg-purple-950/30 transition text-sm text-slate-300 hover:text-purple-400">
+        {% endif %}
+        
+        {% if page.link_fins_pukas %}
+        <li>
+          <a href="{{ page.link_fins_pukas }}" target="_blank" rel="noopener" class="group flex items-center justify-between p-2 rounded-lg hover:bg-purple-950/30 transition text-sm text-slate-300 hover:text-purple-400">
             <span>Pukas Surf Shop</span>
             <span class="text-xs text-slate-500 group-hover:translate-x-0.5 transition-transform">→</span>
           </a>
         </li>
+        {% endif %}
+        
+        {% if page.link_fins_boardshop %}
         <li>
-          <a href="{{ page.link_fins_boardshop | default: '#' }}" target="_blank" rel="noopener" class="group flex items-center justify-between p-2 rounded-lg hover:bg-purple-950/30 transition text-sm text-slate-300 hover:text-purple-400">
+          <a href="{{ page.link_fins_boardshop }}" target="_blank" rel="noopener" class="group flex items-center justify-between p-2 rounded-lg hover:bg-purple-950/30 transition text-sm text-slate-300 hover:text-purple-400">
             <span>Boardshop.co.uk</span>
             <span class="text-xs text-slate-500 group-hover:translate-x-0.5 transition-transform">→</span>
           </a>
         </li>
+        {% endif %}
+        
+        {% if page.link_fins_behindthepines %}
         <li>
-          <a href="{{ page.link_fins_behindthepines | default: '#' }}" target="_blank" rel="noopener" class="group flex items-center justify-between p-2 rounded-lg hover:bg-purple-950/30 transition text-sm text-slate-300 hover:text-purple-400">
+          <a href="{{ page.link_fins_behindthepines }}" target="_blank" rel="noopener" class="group flex items-center justify-between p-2 rounded-lg hover:bg-purple-950/30 transition text-sm text-slate-300 hover:text-purple-400">
             <span>Behind the Pines</span>
             <span class="text-xs text-slate-500 group-hover:translate-x-0.5 transition-transform">→</span>
           </a>
         </li>
+        {% endif %}
       </ul>
     </div>
 
@@ -87,20 +105,26 @@
         Other Accessories
       </h4>
       <ul class="space-y-1.5">
+        {% if page.link_acc_hartbeach %}
         <li>
-          <a href="{{ page.link_acc_hartbeach | default: '#' }}" target="_blank" rel="noopener" class="group flex items-center justify-between p-2 rounded-lg hover:bg-purple-950/30 transition text-sm text-slate-300 hover:text-purple-400">
+          <a href="{{ page.link_acc_hartbeach }}" target="_blank" rel="noopener" class="group flex items-center justify-between p-2 rounded-lg hover:bg-purple-950/30 transition text-sm text-slate-300 hover:text-purple-400">
             <span>Hart Beach</span>
             <span class="text-xs text-slate-500 group-hover:translate-x-0.5 transition-transform">→</span>
           </a>
         </li>
+        {% endif %}
+        
+        {% if page.link_acc_behindthepines %}
         <li>
-          <a href="{{ page.link_acc_behindthepines | default: '#' }}" target="_blank" rel="noopener" class="group flex items-center justify-between p-2 rounded-lg hover:bg-purple-950/30 transition text-sm text-slate-300 hover:text-purple-400">
+          <a href="{{ page.link_acc_behindthepines }}" target="_blank" rel="noopener" class="group flex items-center justify-between p-2 rounded-lg hover:bg-purple-950/30 transition text-sm text-slate-300 hover:text-purple-400">
             <span>Behind the Pines</span>
             <span class="text-xs text-slate-500 group-hover:translate-x-0.5 transition-transform">→</span>
           </a>
         </li>
+        {% endif %}
       </ul>
     </div>
 
   </div>
 </div>
+{% endif %}
