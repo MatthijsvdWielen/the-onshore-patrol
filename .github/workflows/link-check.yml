@@ -1,0 +1,16 @@
+name: Broken Link Check
+
+on:
+  schedule:
+    - cron: '0 0 * * 0' # Runs automatically every Sunday at midnight
+  workflow_dispatch: # Allows you to trigger it manually via the GitHub Actions tab
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    name: Scan for dead links
+    steps:
+      - name: Run Link Crawler
+        uses: technote-space/broken-link-checker-action@v2
+        with:
+          TARGET: https://theonshorepatrol.com # Swap with your actual site URL
