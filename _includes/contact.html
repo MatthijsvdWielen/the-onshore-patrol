@@ -1,6 +1,6 @@
-<div class="max-w-xl mx-auto mt-8 bg-purple-950/20 p-6 rounded-xl border border-purple-900/40">
+<div id="form-wrapper" class="max-w-xl mx-auto mt-8 bg-purple-950/20 p-6 rounded-xl border border-purple-900/40">
     
-    <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+    <form id="contact-form" class="space-y-6">
         <input type="hidden" name="access_key" value="58dcaeef-a959-410c-9896-1fc418aa1980">
 
         <div>
@@ -25,9 +25,54 @@
             <div class="cf-turnstile" data-sitekey="0x4AAAAAADvv6XQYXY40CBYQ"></div>
         </div>
 
-        <button type="submit" 
+        <button type="submit" id="submit-btn"
                 class="w-full bg-purple-600 hover:bg-purple-500 text-white font-bold uppercase text-xs tracking-widest py-4 px-6 rounded-lg transition duration-150 ease-in-out cursor-pointer shadow-lg shadow-purple-950/50">
             Send Message
         </button>
     </form>
 </div>
+
+<script>
+const form = document.getElementById('contact-form');
+const wrapper = document.getElementById('form-wrapper');
+const button = document.getElementById('submit-btn');
+
+form.addEventListener('submit', function(e) {
+    e.preventDefault(); // Stops the default page redirect
+    
+    button.innerText = "Sending...";
+    button.disabled = true;
+
+    const formData = new FormData(form);
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: json
+    })
+    .then(async (response) => {
+        if (response.status == 200) {
+            // Replaces the form layout entirely with a clean text block matching your theme
+            wrapper.innerHTML = `
+                <div class="text-center py-8">
+                    <h3 class="text-xl font-bold text-purple-400 uppercase tracking-wider mb-2">Message Sent!</h3>
+                    <p class="text-sm text-slate-300">Thanks for reaching out. Your review message has bypassed the lineup and landed straight in my inbox.</p>
+                </div>
+            `;
+        } else {
+            button.innerText = "Error, try again";
+            button.disabled = false;
+        }
+    })
+    .catch(error => {
+        console.log(error);
+        button.innerText = "Error, try again";
+        button.disabled = false;
+    });
+});
+</script>
