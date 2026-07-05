@@ -20,6 +20,7 @@
             <a href="/reviews/" class="{% if page.url contains '/reviews' %}text-purple-400 border-b-2 border-purple-400 pb-1{% else %}hover:{{ page.hover_color | default: 'text-purple-400' }} transition{% endif %}">Reviews</a>
             <a href="/improving/" class="{% if page.url == '/improving/' %}text-purple-400 border-b-2 border-purple-400 pb-1{% else %}hover:{{ page.hover_color | default: 'text-purple-400' }} transition{% endif %}">Improving</a>
             <a href="/quiver/" class="{% if page.url == '/quiver/' %}text-purple-400 border-b-2 border-purple-400 pb-1{% else %}hover:{{ page.hover_color | default: 'text-purple-400' }} transition{% endif %}">My Quiver</a>
+            <a href="/articles/" class="{% if page.url == '/article/' %}text-purple-400 border-b-2 border-purple-400 pb-1{% else %}hover:{{ page.hover_color | default: 'text-purple-400' }} transition{% endif %}">Articles</a>
         </nav>
     </header>
 
