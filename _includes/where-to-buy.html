@@ -1,15 +1,15 @@
 <!-- 1. Setup a clean flag check at the top -->
 {% assign show_component = false %}
 
-{% if page.link_hartbeach or page.link_boardshop or page.link_pukas or page.link_behindthepines %}
+{% if page.link_hartbeach or page.link_boardshop or page.link_pukas or page.link_behindthepines or page.link_bluetomato %}
   {% assign show_component = true %}
 {% endif %}
 
-{% if page.link_fins_hartbeach or page.link_fins_pukas or page.link_fins_boardshop or page.link_fins_behindthepines %}
+{% if page.link_fins_hartbeach or page.link_fins_pukas or page.link_fins_boardshop or page.link_fins_behindthepines or page.link_fins_bluetomato %}
   {% assign show_component = true %}
 {% endif %}
 
-{% if page.link_acc_hartbeach or page.link_acc_behindthepines %}
+{% if page.link_acc_hartbeach or page.link_acc_behindthepines or page.link_acc_bluetomato %}
   {% assign show_component = true %}
 {% endif %}
 
@@ -46,6 +46,15 @@
         <li>
           <a href="{{ page.link_boardshop }}" target="_blank" rel="noopener" class="group flex items-center justify-between p-2 rounded-lg hover:bg-purple-950/30 transition text-sm text-slate-300 hover:text-purple-400">
             <span>Boardshop.co.uk</span>
+            <span class="text-xs text-slate-500 group-hover:translate-x-0.5 transition-transform">→</span>
+          </a>
+        </li>
+        {% endif %}
+
+        {% if page.link_bluetomato and page.link_bluetomato != "" %}
+        <li>
+          <a href="{{ page.link_bluetomato }}" target="_blank" rel="noopener" class="group flex items-center justify-between p-2 rounded-lg hover:bg-purple-950/30 transition text-sm text-slate-300 hover:text-purple-400">
+            <span>Blue Tomato</span>
             <span class="text-xs text-slate-500 group-hover:translate-x-0.5 transition-transform">→</span>
           </a>
         </li>
@@ -103,6 +112,15 @@
           </a>
         </li>
         {% endif %}
+
+        {% if page.link_fins_bluetomato and page.link_fins_bluetomato != "" %}
+        <li>
+          <a href="{{ page.link_fins_bluetomato }}" target="_blank" rel="noopener" class="group flex items-center justify-between p-2 rounded-lg hover:bg-purple-950/30 transition text-sm text-slate-300 hover:text-purple-400">
+            <span>Blue Tomato</span>
+            <span class="text-xs text-slate-500 group-hover:translate-x-0.5 transition-transform">→</span>
+          </a>
+        </li>
+        {% endif %}
         
         {% if page.link_fins_behindthepines and page.link_fins_behindthepines != "" %}
         <li>
@@ -125,6 +143,15 @@
         <li>
           <a href="{{ page.link_acc_hartbeach }}" target="_blank" rel="noopener" class="group flex items-center justify-between p-2 rounded-lg hover:bg-purple-950/30 transition text-sm text-slate-300 hover:text-purple-400">
             <span>Hart Beach</span>
+            <span class="text-xs text-slate-500 group-hover:translate-x-0.5 transition-transform">→</span>
+          </a>
+        </li>
+        {% endif %}
+
+        {% if page.link_acc_bluetomato and page.link_acc_bluetomato != "" %}
+        <li>
+          <a href="{{ page.link_acc_bluetomato }}" target="_blank" rel="noopener" class="group flex items-center justify-between p-2 rounded-lg hover:bg-purple-950/30 transition text-sm text-slate-300 hover:text-purple-400">
+            <span>Blue Tomato</span>
             <span class="text-xs text-slate-500 group-hover:translate-x-0.5 transition-transform">→</span>
           </a>
         </li>
